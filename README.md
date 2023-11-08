@@ -8,15 +8,15 @@
 
 << List team member names >>
 
-***
+*** Ethan Fried and Adnan Badnjevic
 
 ## Project Description
 
 << Give an overview of your project >>
 
-***    
+***    We plan to make a platformer game, with multiple screens. A start screen, a screen for each of the levels, as well as a screen that opens whenyou click a setting button that allows you to exit the game.
 
-## GUI Design
+## GUI Design 
 
 ### Initial Design
 
@@ -30,11 +30,11 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. start menu
+2. settings tab
+3. moveable character
+4. obstacle collision
+5. game over screen
 
 ### Classes
 
