@@ -1,10 +1,14 @@
 import pygame
 import sys
 from game import Game
+import random
 
 class Controller:
     def __init__(self):
         self.game = Game()
+
+        self.num = random.randint(1, 10)
+
 
     """
     Second class is Controller. Basic overview on what keys get pressed and
@@ -26,6 +30,8 @@ class Controller:
             self.game.player.jump()
 
     def run(self):
+        if self.num > 5:
+            print("hi")
         while self.game.running:
             self.game_events()
             self.game.update()

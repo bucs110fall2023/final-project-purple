@@ -1,6 +1,7 @@
 import pygame
 import random
 import sys
+from player import Player
 
 class Game:
   def __init__(self):
@@ -17,6 +18,10 @@ class Game:
       self.obstacles = []
       self.score = 0
       self.running = True
+      self.screen = pygame.display.set_mode((800, 600))
+      self.obstacle_speed = 5
+      self.obstacle_movement = 25
+      self.obstacles = []
       self.player = Player(self.width // 2 - self.player_size // 2, self.height - self.player_size, self.player_size, self.red)
 
       """
@@ -58,33 +63,32 @@ class Game:
       will collide with the falling white sqaures and since it does, the test is proven
       to be correct. 
       """
+  def draw_obstacles(self, obstacle_list):
+          width = 800
+          height = 600
+          screen = pygame.display.set_mode((width, height))
+          for obstacle in obstacle_list:
+              pygame.draw.rect(screen, "white", obstacle)
 
   def draw(self):
-      screen.fill("black")
-      img = pygame.image.load('sky.jpg')
-      screen.blit(img, (0,0))
-      self.player.player_red_rectangle(screen)
+      self.screen.fill("Black")
+      self.player.player_red_rectangle(self.screen)
       self.draw_obstacles()
 
 
       font = pygame.font.Font(None, 36)
       score_text = font.render(f"Score: {self.score}", True, self.white)
-      screen.blit(score_text, (10, 10))
+      self.screen.blit(score_text, (10, 10))
 
       pygame.display.flip()
 
       # Set the frame rate
       clock.tick(self.fps)
 
-  def draw_obstacles(obstacle_list):
-          screen = pygame.display.set_mode((WIDTH, HEIGHT))
-          for obstacle in obstacle_list:
-              pygame.draw.rect(screen, "white", obstacle)
-
   def game_over(self):
       font = pygame.font.Font(None, 74)
       text = font.render("Game Over", True, self.white)
-      screen.blit(text, (self.width // 2 - 200, self.height // 2 - 37))
+      self.screen.blit(text, (self.width // 2 - 200, self.height // 2 - 37))
       pygame.display.flip()
       pygame.time.wait(2000)
       pygame.quit()

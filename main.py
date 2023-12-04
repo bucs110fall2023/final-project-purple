@@ -6,19 +6,16 @@ from controller import Controller
 from game import Game
 from player import Player
 
-WIDTH, HEIGHT = 800, 600
+WIDTH =800
+HEIGHT = 600
 FPS = 60
 WHITE = "white"
 RED = "red"
 PLAYER_SIZE = 50
 OBSTACLE_SIZE = 50
 
-player_speed = 7
 is_jumping = False
 block_jump = 10
-obstacle_speed = 5
-obstacle_movement = 25
-obstacles = []
 score = 0
 
 SCREEN_WIDTH = 800
@@ -53,9 +50,7 @@ while running:
                     value = 2
                     running = sys.exit()
 
-    screen.fill(BLACK)
-    img1 = pygame.image.load('sky.jpg')
-    screen.blit(img1, (0,0))    
+    screen.fill(BLACK) 
     pygame.draw.rect(screen, RED, red_rect)
     pygame.draw.rect(screen, BLUE, blue_rect)
     font = pygame.font.Font(None, 48)
@@ -76,9 +71,10 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((800, 600))
     clock = pygame.time.Clock()
 
-    controller = Controller()
-    controller.run()
-
+    that = Controller() # 4
+    that.run() #run(that)
+    this = Controller() # 8
+    this.run() #run(this)
 
 
 def main():

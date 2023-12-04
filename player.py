@@ -25,6 +25,8 @@ class Player:
           self.block_jump = 10
 
   def movement(self, keys):
+      player_speed = 7
+      WIDTH = 800
       if keys[pygame.K_LEFT] and self.rect.x > 0:
           self.rect.x -= player_speed
       if keys[pygame.K_RIGHT] and self.rect.x < WIDTH - self.rect.width:
