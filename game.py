@@ -22,6 +22,7 @@ class Game:
       self.obstacle_speed = 5
       self.obstacle_movement = 25
       self.obstacles = []
+      self.clock = pygame.time.Clock()
       self.player = Player(self.width // 2 - self.player_size // 2, self.height - self.player_size, self.player_size, self.red)
 
       """
@@ -63,17 +64,11 @@ class Game:
       will collide with the falling white sqaures and since it does, the test is proven
       to be correct. 
       """
-  def draw_obstacles(self, obstacle_list):
-          width = 800
-          height = 600
-          screen = pygame.display.set_mode((width, height))
-          for obstacle in obstacle_list:
-              pygame.draw.rect(screen, "white", obstacle)
-
+  
   def draw(self):
       self.screen.fill("Black")
       self.player.player_red_rectangle(self.screen)
-      self.draw_obstacles()
+      self.draw_obstacles(self.obstacles)
 
 
       font = pygame.font.Font(None, 36)
@@ -83,7 +78,12 @@ class Game:
       pygame.display.flip()
 
       # Set the frame rate
-      clock.tick(self.fps)
+      self.clock.tick(self.fps)
+
+  def draw_obstacles(self, obstacle_list):
+          for obstacle in obstacle_list:
+              pygame.draw.rect(self.screen, "white", obstacle)
+
 
   def game_over(self):
       font = pygame.font.Font(None, 74)
