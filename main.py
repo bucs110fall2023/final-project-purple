@@ -2,7 +2,7 @@ import pygame
 import random
 import sys
 
-from controller import Controller
+from src.controller import Controller
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -47,7 +47,8 @@ while running:
 
 ############################################################################
 
-if __name__ == "__main__":
+
+def main():
     pygame.init()
     screen = pygame.display.set_mode((800, 600))
     clock = pygame.time.Clock()
@@ -56,10 +57,6 @@ if __name__ == "__main__":
     that.run() #run(that)
     this = Controller() # 8
     this.run() #run(this)
-
-
-def main():
-    pygame.init()
     #Create an instance on your controller object
     #Call your mainloop
 
@@ -67,5 +64,7 @@ def main():
 
 # https://codefather.tech/blog/if-name-main-python/
 
+if __name__ == "__main__":
+    main()
 
 

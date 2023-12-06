@@ -1,7 +1,7 @@
 import pygame
 import random
 import sys
-from player import Player
+from src.player import Player
 
 class Game:
   def __init__(self):
