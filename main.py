@@ -3,30 +3,11 @@ import random
 import sys
 
 from controller import Controller
-from game import Game
-from player import Player
-
-WIDTH =800
-HEIGHT = 600
-FPS = 60
-WHITE = "white"
-RED = "red"
-PLAYER_SIZE = 50
-OBSTACLE_SIZE = 50
-
-is_jumping = False
-block_jump = 10
-score = 0
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 BOX_WIDTH = 100
 BOX_HEIGHT = 50
-
-BLACK = "black"
-RED = "red"
-BLUE = "blue"
-
 value = None
 running = True
 
@@ -50,9 +31,9 @@ while running:
                     value = 2
                     running = sys.exit()
 
-    screen.fill(BLACK) 
-    pygame.draw.rect(screen, RED, red_rect)
-    pygame.draw.rect(screen, BLUE, blue_rect)
+    screen.fill("BLACK") 
+    pygame.draw.rect(screen, "RED", red_rect)
+    pygame.draw.rect(screen, "BLUE", blue_rect)
     font = pygame.font.Font(None, 48)
     text = font.render("Welcome to falling Rectangles!", True, "white")
     screen.blit(text, (150, 150))

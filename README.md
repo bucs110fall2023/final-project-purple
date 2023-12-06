@@ -2,7 +2,7 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
 # << Project Title >>
-## CS110 Final Project  << Semester, Year >>
+## CS110 Final Project  << fall, 2023 >>
 
 ## Team Members
 
@@ -66,7 +66,7 @@ Test Description: Verify that as the game progresses user gains more score
 Test Steps:
 1. start the game
 2. play for a little but and verify that the score is increasing
-Expected Outcome: The score should be increasing by 1 every second that passes that the user is alive
+Expected Outcome: The score should be increasing by 1 every block that passes that the user is alive
 
 
 test case 3: movement
@@ -94,7 +94,7 @@ Test Description: Verify that the game is ended after colliding with an object
 Test Steps:
 1. start the game
 2. let yourself die to an object
-3. verify that the game is ended and there is a game over screen
-Expected Outcome: after the character is killed, verify that there is a game over screen that has a retry button and an exit game button
+3. verify that the game is ended and that there is a game over message
+Expected Outcome: after the character is killed, verify that there is a game over message
 
 
